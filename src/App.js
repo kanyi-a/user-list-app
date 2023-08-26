@@ -52,7 +52,12 @@ function App() {
        console.error("Error adding user:", error);
      }
    };
-
+  //handle input change
+  
+const handleInputChange = (e) => {
+  const { name, value } = e.target;
+  setNewUser((prevUser) => ({ ...prevUser, [name]: value }));
+};
      
   return (
     <div className="App">
