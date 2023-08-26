@@ -71,6 +71,26 @@ const handleInputChange = (e) => {
     const toggleFormVisibility = () => {
       setIsFormVisible(!isFormVisible);
     };
+  
+  //handling delete function
+   const handleDelete = async (id) => {
+     try {
+       const response = await fetch(
+         `https://jsonplaceholder.typicode.com/users/${id}`,
+         {
+           method: "DELETE",
+         }
+       );
+
+       if (response.ok) {
+         setUsers((prevUsers) => prevUsers.filter((user) => user.id !== id));
+       } else {
+         console.error("Error deleting user:", response.statusText);
+       }
+     } catch (error) {
+       console.error("Error deleting user:", error);
+     }
+   };
   return (
     <div className="App">
  <h1>User List</h1>
