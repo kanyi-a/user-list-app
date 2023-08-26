@@ -19,6 +19,10 @@ function App() {
       .catch((error) => console.error("Error fetching users:", error));
   }, []);
 
+  //handle submit to add post request
+   const handleSubmit = async e => {
+    e.preventDefault();
+
   return (
     <div className="App">
       <h1>User List</h1>
