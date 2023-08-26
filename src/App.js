@@ -20,17 +20,39 @@ function App() {
   }, []);
 
   //handle submit to add post request
-   const handleSubmit = async e => {
-    e.preventDefault();
+   const handleSubmit = async (e) => {
+     e.preventDefault();
 
      try {
-      const response = await fetch('https://jsonplaceholder.typicode.com/users', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(newUser),
-      });
+       const response = await fetch(
+         "https://jsonplaceholder.typicode.com/users",
+         {
+           method: "POST",
+           headers: {
+             "Content-Type": "application/json",
+           },
+           body: JSON.stringify(newUser),
+         }
+       );
+       if (response.ok) {
+         const addedUser = await response.json();
+         setUsers([...users, addedUser]);
+         setNewUser({
+           name: "",
+           username: "",
+           email: "",
+           phone: "",
+           company: { name: "" },
+           address: { street: "" },
+         });
+       } else {
+         console.error("Error adding user:", response.statusText);
+       }
+     } catch (error) {
+       console.error("Error adding user:", error);
+     }
+   };
+
      
   return (
     <div className="App">
