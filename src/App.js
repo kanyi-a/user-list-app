@@ -3,6 +3,14 @@ import "./App.css";
 
 function App() {
   const [users, setUsers] = useState([]);
+  const [newUser, setNewUser] = useState({
+   name: "",
+   username: "",
+   email: "",
+   phone: "",
+   company: { name: "" },
+   address: { street: "" },
+ });
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
@@ -14,18 +22,32 @@ function App() {
   return (
     <div className="App">
       <h1>User List</h1>
-      <ul>
-        {users.map((user) => (
-          <li key={user.id}>
-            <h2>{user.name}</h2>
-            <p>Username: {user.username}</p>
-            <p>Email: {user.email}</p>
-            <p>Phone: {user.phone}</p>
-            <p>Company: {user.company.name}</p>
-            <p>Street: {user.address.street}</p>
-          </li>
-        ))}
-      </ul>
+      <table className="table">
+        <thead>
+          <tr>
+            <th className="row-number">#</th>
+            <th>Name</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Company</th>
+            <th>Street</th>
+          </tr>
+        </thead>
+        <tbody>
+          {users.map((user, index) => (
+            <tr key={user.id}>
+              <td className="row-number">{index + 1}</td>
+              <td>{user.name}</td>
+              <td>{user.username}</td>
+              <td>{user.email}</td>
+              <td>{user.phone}</td>
+              <td>{user.company.name}</td>
+              <td>{user.address.street}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }
