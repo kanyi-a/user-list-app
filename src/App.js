@@ -157,11 +157,12 @@ function App() {
       ) : error ? (
         <p>Error: {error.message}</p>
       ) : (
-        <div>
+        <div >
           <button className="btn btn-primary" onClick={toggleFormVisibility}>
-            {isFormVisible ? "Hide Form" : "Add User"}
+            {isFormVisible ? "HIDE FORM" : "ADD USER"}
           </button>
-          {isFormVisible && (
+              {isFormVisible && (
+                <div className="container mb-5">
             <form onSubmit={handleSubmit}>
               <div className="form-group">
                 <label htmlFor="name">Name:</label>
@@ -235,9 +236,10 @@ function App() {
               </div>
 
               <button type="submit" className="btn btn-primary">
-                submit
+                SUBMIT
               </button>
-            </form>
+                  </form>
+                  </div>
           )}
           <table className="table">
             <thead>
