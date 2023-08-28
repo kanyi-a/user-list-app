@@ -9,10 +9,10 @@ function Navbar() {
     <div className="navbar">
       <div className="logo-container">
         <FontAwesomeIcon icon={faUser} className="logo-icon" />
-        <h1>UserList</h1>
+        <h1>User List</h1>
       </div>
     </div>
   );
 
-}
+};
 export default Navbar
