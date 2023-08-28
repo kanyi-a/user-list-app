@@ -5,10 +5,22 @@
 font-family: 'Roboto', sans-serif;
   text-align: center;
   padding: 20px;
-  font-weight: lighter;
+  font-weight: light;
 }
 
 h1 {
+  margin-bottom: 20px;
+}
+.container {
+  margin-top: 10px;
+
+}
+.form-group label {
+  font-weight: bold;
+}
+
+/* Add spacing between form groups */
+.form-group {
   margin-bottom: 20px;
 }
 form {
