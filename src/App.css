@@ -5,7 +5,7 @@
 font-family: 'Roboto', sans-serif;
   text-align: center;
   padding: 20px;
-  font-weight: light;
+  font-weight: 200
 }
 
 h1 {
@@ -16,7 +16,7 @@ h1 {
 
 }
 .form-group label {
-  font-weight: bold;
+  font: weight 400px;
 }
 
 /* Add spacing between form groups */
