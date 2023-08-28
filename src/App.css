@@ -1,7 +1,8 @@
 /* App.css */
 
 .App {
-  font-family: Arial, sans-serif;
+  font-family: 'Righteous', cursive;
+font-family: 'Roboto', sans-serif;
   text-align: center;
   padding: 20px;
 }
@@ -9,12 +10,20 @@
 h1 {
   margin-bottom: 20px;
 }
+form {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #f5f5f5;
+}
+
 
 .table {
   width: 100%;
   border-collapse: collapse;
   border-spacing: 0;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .table th,
@@ -30,9 +39,10 @@ h1 {
 }
 
 .row-number {
-  width: 30px;
+  width: 10px;
   text-align: center;
 }
+
 
 .table tr td:first-child {
   text-align: center;
